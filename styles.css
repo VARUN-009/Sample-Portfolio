@@ -1,0 +1,811 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+:root {
+  --bgOrange: #e84949;
+}
+
+#wrapper {
+  height: 100vh;
+  /* width: 100vw; */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+  /* height: auto;  */
+}
+
+.logo-text {
+  margin-left: -1.2rem;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.nav-items {
+  display: flex;
+
+  gap: 2rem;
+  padding: 0 4em;
+}
+
+.nav-items div {
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-items div a {
+  color: black;
+}
+
+.nav-items div:hover {
+  transition: 0.8s;
+  font-weight: 500;
+}
+
+.hero-section {
+  position: relative;
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin: 4rem auto;
+  /* margin-left: -15rem; */
+  padding: 0 1rem;
+  padding-bottom: 8rem;
+}
+
+.name-faded-text {
+  user-select: none;
+  font-size: 7em;
+  color: rgb(231, 231, 231);
+  position: absolute;
+
+  bottom: -16%;
+  left: -2%;
+  font-weight: 400;
+  /* font-weight: bold; */
+  transition: all 3s;
+}
+
+/* faded text ka ancestor hai hero section jiski position relative hai, toh uske hisaab se bottom left lega vo  */
+
+.hero-section-left {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero-section-heading {
+  font-size: 35px;
+  color: #343d68;
+  font-weight: 300;
+}
+
+.role {
+  color: #4e45d5;
+  font-weight: 500;
+  /* font-weight: 800; */
+}
+
+.hero-section-sub-heading {
+  font-size: 45px;
+  line-height: 45px;
+}
+
+.hero-section-description {
+  margin-top: 1rem;
+  width: 70%;
+  /* width: 70%; */
+  font-weight: 300;
+  /* font-weight: 500; */
+}
+
+.btn-pink {
+  background-color: var(--bgOrange);
+  width: fit-content;
+  color: white;
+  padding: 0.8rem 2.3rem;
+  font-size: 18px;
+  box-shadow: 5px 5px 7px 0px #0000003f;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-weight: 400;
+  /* font-weight: 500; */
+  border: 3px solid transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-pink::before {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  left: 0;
+  bottom: 0px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.8s;
+  z-index: -1;
+}
+
+.btn-pink:hover::before {
+  transform: scaleX(1);
+  cursor: pointer;
+}
+
+.btn-pink:hover {
+  border: solid 3px var(--bgOrange);
+  color: black;
+}
+
+.hero-section-right {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.user-image {
+  padding: 2.5rem;
+  /* padding: 2.5rem; */
+  filter: grayscale(1);
+  animation: scaleImage 5s linear infinite;
+  transition: all 1s;
+  /* z-index: -1; */
+  /* width: 345px;
+    height: 390px; */
+}
+
+.user-image {
+  z-index: -1;
+  width: 385px;
+  height: 480px;
+}
+
+@keyframes scaleImage {
+  0% {
+    filter: grayscale(0);
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+    filter: grayscale(1);
+    box-shadow: 3px 3px 10px black;
+  }
+
+  100% {
+    transform: scale(1);
+    filter: grayscale(0);
+  }
+}
+
+.icon-dots {
+  z-index: 1;
+  bottom: -1rem;
+  right: 0;
+  animation: dotsAnimation 3s infinite;
+}
+
+@keyframes dotsAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.icon-cube {
+  z-index: 1;
+  top: -0.8em;
+  right: 1em;
+  animation: cubeRotate 3s infinite;
+}
+
+@keyframes cubeRotate {
+  0% {
+    transform: rotateY(0deg) translateY(0px);
+  }
+
+  50% {
+    transform: rotateY(180deg) translateY(-12px);
+  }
+
+  100% {
+    transform: rotateY(360deg) translateY(0px);
+  }
+}
+
+.icon-circle {
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  animation: shakeEffect 6s linear infinite;
+}
+
+@keyframes shakeEffect {
+  /* 0%{
+        left: 0;
+        bottom: 0; 
+    } */
+
+  50% {
+    left: 5%;
+    bottom: 10%;
+  }
+
+  /* 100%{
+        left: 0;
+        bottom: 0; 
+    }   */
+}
+
+.icon-zigzag {
+  z-index: 1;
+  top: 1.5em;
+  left: -0.3em;
+  animation: zigzagEffect 5s ease-in infinite;
+}
+
+@keyframes zigzagEffect {
+  50% {
+    left: 2%;
+    top: 2%;
+  }
+}
+
+.icon-plus {
+  z-index: 9;
+  top: -1.8rem;
+  left: 50%;
+  animation: plusEffect 5s ease-in infinite;
+}
+
+@keyframes plusEffect {
+  50% {
+    top: 3%;
+    left: 48%;
+  }
+}
+
+/* PROJECT SECTION CSS */
+
+.project-section {
+  background-color: rgb(231, 231, 231);
+  margin-top: 4rem;
+}
+
+.page-header {
+  color: var(--bgOrange);
+  font-size: 80px;
+  text-align: center;
+  padding-top: 30px;
+  font-weight: 500;
+}
+
+.project-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  /* justify-content: center; */
+}
+
+.project-card {
+  width: 80%;
+  /* width: 90%; */
+  height: 550px;
+  background-image: url(./images/projects/Project1.png);
+  background-size: contain;
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  position: relative;
+  box-shadow: 0px 0px 40px #1f1f1f;
+
+  /* margin: 0 auto; */
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* transition: all 1s; */
+  background-color: #1f1f1f9a;
+  /* transform: scaleX(1); */
+  z-index: 1;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(45deg, #343d68, #343d68be, #343d687c);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.4s;
+  z-index: 2;
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+.project-number {
+  position: absolute;
+  font-size: 200px;
+  font-weight: 600;
+  color: white;
+  z-index: 3;
+  display: none;
+  transition: all 0.5s;
+}
+
+.project-card:hover .project-number {
+  display: block;
+}
+
+.project-number-right {
+  right: -40px;
+  top: -45px;
+}
+
+.project-number-left {
+  left: -40px;
+  top: -45px;
+}
+
+.project-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 2em;
+  bottom: 20%;
+  z-index: 4;
+  gap: 1em;
+  transition: all 0.4s;
+}
+
+.project-content-left {
+  left: 10%;
+}
+
+.project-content-right {
+  right: 10%;
+}
+
+.project-skills-container {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-skill {
+  /* width: 10px; */
+  width: 40px;
+}
+
+.project-heading {
+  font-size: 50px;
+  font-weight: 400;
+  /* font-weight: bold; */
+  line-height: 3rem;
+}
+
+.project-subHeading {
+  width: 70%;
+  font-size: 16px;
+  font-weight: 200;
+  font-style: oblique;
+}
+
+.btn-group {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.btn-project:hover {
+  border: none;
+}
+
+.icon {
+  cursor: pointer;
+  color: white;
+  font-size: 35px;
+  transition: all 0.4s;
+}
+
+.icon:hover {
+  color: var(--bgOrange);
+}
+
+/* .project-container:hover{
+    transform: scale(1.2);
+} */
+
+.project-card:hover .project-content {
+  transform: scale(1.2);
+}
+
+#project1 {
+  margin-left: 40px;
+  background-image: url(./images/projects/Project1.png);
+}
+#project2 {
+  margin-left: 200px;
+  background-image: url(./images/projects/Project2.png);
+}
+#project3 {
+  margin-left: 40px;
+  background-image: url(./images/projects/Project3.png);
+}
+#project4 {
+  margin-left: 200px;
+  background-image: url(./images/projects/Project4.png);
+}
+
+/* SKILLS TECH STACK SECTION */
+.skills-container {
+  position: relative;
+  display: flex;
+  padding: 5rem;
+  margin: 10rem auto;
+  gap: 30px;
+  box-sizing: content-box;
+}
+
+.skills-container-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-container-right {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-fade-text {
+  position: absolute;
+  font-size: 10em;
+  /* font-size: 15em; */
+  color: rgb(231, 231, 231);
+  font-weight: 400;
+  bottom: -34.5%;
+  right: 7%;
+  /* right: -25%; */
+  user-select: none;
+  /* overflow-y: hidden; */
+}
+
+.blob-style {
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: blobAnimate 3s linear infinite;
+}
+
+@keyframes blobAnimate {
+  50% {
+    top: 54%;
+    left: 56%;
+  }
+}
+
+.skills-logo {
+  width: 80px;
+  transition: all 0.5s;
+}
+
+.skills-logo:hover {
+  transform: scale(1.2);
+}
+
+.skill-heading {
+  font-size: 50px;
+  font-weight: 500;
+  color: var(--bgOrange);
+  line-height: 50px;
+}
+
+.caps {
+  font-size: 90px;
+}
+
+.skill-subHeading {
+  margin-top: 1rem;
+  width: 85%;
+  text-align: justify;
+  font-weight: 300;
+}
+
+.skill-subHeading p {
+  margin: 15px 0;
+}
+
+/* CONTACT US FORM  */
+
+.contactus-form-container {
+  width: 100%;
+  background-color: rgb(231, 231, 231);
+  margin-top: 25px;
+  /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem; */
+}
+
+.contactus-heading {
+  font-size: 5em;
+  color: var(--bgOrange);
+  padding-top: 2rem;
+  font-weight: 500;
+}
+
+.contactus-sub-heading {
+  font-size: 3rem;
+  color: #343d68aa;
+  font-weight: 500;
+  /* text-transform: capitalize; */
+}
+
+.form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+    align-items: center;  */
+  gap: 30px;
+  width: 80%;
+  margin: 0rem 8rem;
+  /* margin: 2rem 5rem ; */
+  margin-top: 35px;
+  padding: 3rem;
+  padding-bottom: 2rem;
+}
+
+.formfield {
+  width: 100%;
+  height: 42px;
+  padding: 0 2rem;
+  font-size: 18px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px #1f1f1f;
+  font-weight: 300;
+  border: none;
+  /* margin-top: 27px; */
+}
+
+.formfield-textarea {
+  height: auto;
+  padding-top: 1rem;
+}
+
+#submit-btn {
+  border: none;
+  font-size: 1.4rem;
+  /* margin: 3rem; */
+  margin: 0.8rem 0;
+  /* transform: translateX(-103%); */
+  /* margin-top: 1.6rem; */
+}
+
+#submit-btn:hover {
+  transform: scale(0.9);
+}
+
+.submit-icon {
+  padding: 0 1rem;
+  font-size: 1.5rem;
+}
+
+/* FOOTER  */
+footer {
+  width: 100%;
+  background-color: #343d68;
+  position: relative;
+  margin-top: -1px;
+  padding: 5rem;
+}
+
+.footer-container {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem;
+}
+
+.footer-faded-text {
+  position: absolute;
+  font-size: 5em;
+  color: #535c87;
+  font-weight: 300;
+  bottom: 0;
+  left: 0;
+  user-select: none;
+}
+
+.link-wrapper {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.link-wrapper a {
+  color: white;
+  font-weight: 300;
+  transition: all 0.6s;
+}
+
+.link-wrapper a:hover {
+  color: var(--bgOrange);
+}
+.icon-wrapper {
+  display: flex;
+  gap: 1rem;
+  padding-right: 5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  /* Hero Section */
+  .hero-section {
+    flex-direction: column-reverse;
+  }
+  .hero-section-right {
+    width: 100%;
+  }
+  .hero-section-left {
+    width: 100%;
+  }
+
+  /* Projects Section */
+  .project-section {
+    width: 100%;
+  }
+  .project-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .project-card {
+    width: 90%; /* adjust the value to your liking */
+    margin-bottom: 20px;
+  }
+
+  /* Skills Section */
+  .skills-container {
+    flex-direction: column;
+  }
+  .skills-container-left {
+    width: 100%;
+  }
+  .skills-container-right {
+    width: 100%;
+  }
+
+  /* Contact Form */
+  .contactus-form-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .form {
+    width: 100%;
+  }
+  .formfield-container {
+    flex-direction: column;
+  }
+  .formfield {
+    width: 100%;
+  }
+}
+
+/* centre m lie karne ke liye container ka margin top bottom se zero and left right se auto */
+/* navbar ka display flex space between chahiye kyuki, sab straight line m chahiye */
+/* rem m root element ka font size hota h 16px bole toh */
+/* em m jo parent font size hoga uska size lelega,  */
+/* v image and text single line flex , nav items ke beech m gap space ke liye gap use*/
+/* anchor tag se underline htane ke liye text decoration */
+/* transition all kardiya toh jo jo hover nav items m likha h sab 1s m hoga, bad practicce, performance kharab */
+/* scroll-behavior: smooth --- aaram se jayega, smoothly */
+/* sab kaam 1200 px width ke andar hi ho rah hai isliye humne container leliya hai jiss se ki fix rahe, jo left right m chipka hua hai vo external properties lagayi h warna sab 1200px m hi hai */
+/* logo ki width di thi toh uske hisaab se vo apne aap height lelega, dene ki jarorat ni */
+/* user-select: none; koi user isko select na kar paye */
+/* heading aur subheading ko same class bhi de sakte hero section heading wali, kyuki font same h dono ka,  */
+/* absolute class ke bina bhi kaam ho jata par sahi h easyness ke liye */
+/* white patti dikh rahi h na image m vo padding ki wajah se dikh rahi hai */
+/* animation linear means Play an animation with the same speed from beginning to end: */
+/* scale bole toh zoom */
+/* 0% animation m sabse upr, black and white, and sabse upr means scale(1) */
+/* transition means change kitne time, ek dum se start ho rahi ya smoothly start ho rahi and animations bole toh kya kya change ho rah hai,  */
+/* 3 cheeze ho rahe transition m , pehle chotti image hi hai jaisi hai, then badi ho rahi then phir chotti ho rahi, dobara first step m aagayi */
+/* pehle image black and white chotti, then color and badi then black and white and chotti, same repeat hote rahega  */
+/* ye jo chote chote icons h sabme alg alg animations keyframes banege, upr neeche move kar rahe, y axis transform */
+/* translate and scale m perspective on karne ki need h bsss, rotate m nhi */
+/* movement position mark karke bhi kar sakta ki src destin pos ye hai, and translate karke bhi */
+
+/* projecr card ki width 90% kyuki project container h 1200px ka and card chahiye 1080px ka, toh 90%hua */
+/* background-repeat property to specify how the image should be repeated to cover the entire background area of the element., chotti iamge ho toh baar baar repeat kardeti hai, toh vo na ho iske liye */
+/* har card m ek black tint bhi hai, translucent sa */
+/* card m black tilt poora image pe aaye toh top left right bottom 0 ,after m content dena pdega ek, jaroori hai, empty, 9a part color ka opacity ke liye    */
+/* projecr card after ki pos abs kyuki m chahta hu ki background color uske upr overlap kar jaye */
+/* transform scalex1 bole toh x axis m 1 unit aage, left se right chahiye na iss wajah se  */
+/* opacity ni use kiya card color m blue color, kyuki opacity m toh gayab hota and then ek dum se aata ,left se start ni hota, scalex se color side karke ayega */
+/* transform origin kyuki isko m left se right chahta hu,  */
+/* after means caard ki image ke baad usme ek tint lag jayega vo overlap karega, overlap karne ke baad before bole toh blue color start ni hoga */
+/* line height -- It's commonly used to set the distance between lines of text.  */
+/* jis element m change karna hai usme transition lagti hai, ki hover karne ke baad jo jo change hoge vo iten sec m hoge */
+
+/* right skills icon overlap kar rahe h bubble pe, toh pos relative and icons ki pos absolute */
+/*  When you set text-align to justify, the text is spaced out such that both the left and right edges of the content are aligned evenly along the element's width. */
+/* box-sizing initial karni h toh content-box kardo, border-box ka ulta h vo */
+
+/* text transform capital -- Puts the first typographic letter unit of each word in titlecase. */
+/* form ko div ke andar rakha hai jiss ki flex use kiya jaa sakw */
+/* isne kya kiya h ki contactus form second time jo h na usko flex bnakr beech m le aaya, phir jo form ka content h jis div ke andar form h uss div ko isne felx bnakr col dire dedi, par meine uss class ko form ke saath hi lga diya hai, toh meine bss form ki dir flex ki hai */
+/* footer ki pos relative jiss se ki faded text abs karke bottom right m aajaye */
+/* justify content space between extreme left and extreme right m chahiye h toh */
